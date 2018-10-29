@@ -1,16 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {environment} from '../environments/environment';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { SignupPageComponent } from './components/signup-page/signup-page.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginPageComponent,
+    SignupPageComponent,
+    DashboardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
