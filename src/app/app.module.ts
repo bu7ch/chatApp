@@ -1,13 +1,15 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {Router, RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {environment} from '../environments/environment';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { SignupPageComponent } from './components/signup-page/signup-page.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import {LoginPageComponent} from './components/login-page/login-page.component';
+import {SignupPageComponent} from './components/signup-page/signup-page.component';
+import {DashboardComponent} from './components/dashboard/dashboard.component';
+import {routes} from './app.routing.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
 
