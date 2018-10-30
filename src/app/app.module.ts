@@ -10,6 +10,10 @@ import {LoginPageComponent} from './components/login-page/login-page.component';
 import {SignupPageComponent} from './components/signup-page/signup-page.component';
 import {DashboardComponent} from './components/dashboard/dashboard.component';
 import {routes} from './app.routing.module';
+import {MaterialdesignModule} from './materialdesign';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +24,11 @@ import {routes} from './app.routing.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialdesignModule,
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
