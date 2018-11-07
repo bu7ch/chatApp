@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {Router, RouterModule} from '@angular/router';
+import {RouterModule} from '@angular/router';
 
 import {AppComponent} from './app.component';
 import {AngularFireModule} from 'angularfire2';
