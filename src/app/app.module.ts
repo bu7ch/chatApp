@@ -5,6 +5,7 @@ import {RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from 'angularfire2/auth';
 import {environment} from '../environments/environment';
 import {LoginPageComponent} from './components/login-page/login-page.component';
 import {SignupPageComponent} from './components/signup-page/signup-page.component';
@@ -14,6 +15,8 @@ import {MaterialdesignModule} from './materialdesign';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AuthService} from './auth.service';
+import {AuthguardService} from './authguard.service';
 
 @NgModule({
   declarations: [
@@ -31,10 +34,15 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule
 
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
